@@ -1,0 +1,2 @@
+void openi(char *fname);
+
