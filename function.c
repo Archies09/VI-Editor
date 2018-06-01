@@ -39,7 +39,9 @@ void clear_scr() //http://man7.org/linux/man-pages/man4/console_codes.4.html
 
 void welcome()
 {
-    write(STDOUT_FILENO, "					WELCOME TO ARCHIES EDITOR",31);
+    write(STDOUT_FILENO, "					WELCOME TO ARCHIES EDITOR\n",31);
+    write(STDOUT_FILENO, "					Press ctrl+q to Quit and i to Start Typing",41);
+
 }
 
 void init_curs() //http://man7.org/linux/man-pages/man4/console_codes.4.html

@@ -46,10 +46,12 @@ void init(int z)
 
 	int ch;
 
-    clear_scr();
-	//
+    //clear_scr();
+    write(STDOUT_FILENO, "\x1b[s",3);
+    write(STDOUT_FILENO, "\033[?47h",6);
 
-	init_curs();
+
+	//init_curs();
 
 
     //test = fopen("/home/archies/Downloads/test","w");
@@ -78,9 +80,11 @@ void init(int z)
     }
 
     else{
-	clear_scr();
-	init_curs();
+	//clear_scr();
+	//init_curs();
 
+    write(STDOUT_FILENO, "\033[?47l",6);
+    write(STDOUT_FILENO, "\x1b[u",3);
 	tcsetattr(fileno(ip), TCSANOW, &before_settings);
     }
 
